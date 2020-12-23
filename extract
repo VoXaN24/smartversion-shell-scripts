@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ $1 == "" ]]; then
+    echo "usage: ./extract patch"
+    exit 1
+fi
+
+if [[ ! -f "/usr/bin/smv" ]]; then
+    echo "error: Could not find SmartVersion executable in /usr/bin."
+    exit 1
+fi
+
+if [[ ! -f "$1" ]]; then
+    echo "error: Could not find SmartVersion patch."
+    exit 1
+fi
+
+"/usr/bin/env" "smv" x $1 -br .
+
+if [[ $? != 0 ]]; then
+    echo "error: Could not extract SmartVersion patch."
+    exit 1
+fi
+
+echo "success: Successfully extracted SmartVersion patch."
+exit 0

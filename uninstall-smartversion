@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+if [[ $EUID != 0 ]]; then
+    echo "error: Insufficient permissions."
+    exit 1
+fi
+
+if [[ ! -f "/usr/bin/smv" ]]; then
+    echo "error: Could not find SmartVersion executable in /usr/bin."
+    exit 1
+fi
+
+sudo rm "/usr/bin/smv"
+
+if [[ $? != 0 ]]; then
+    echo "error: Could not remove SmartVersion executable from /usr/bin/smv."
+    exit 1
+fi
+
+echo "success: Successfully uninstalled SmartVersion executable from /usr/bin/smv."
+exit 0

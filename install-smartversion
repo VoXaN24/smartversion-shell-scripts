@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+if [[ $EUID != 0 ]]; then
+    echo "error: Insufficient permissions."
+    exit 1
+fi
+
+LSCPU_OUTPUT=$(lscpu)
+if [[ $LSCPU_OUTPUT =~ "x86_64" ]]; then
+    CPU_ARCHITECTURE="x64"
+elif [[ $LSCPU_OUTPUT =~ "i386" ]]; then
+    CPU_ARCHITECTURE="x86"
+else
+    echo "error: SmartVersion is not compatible with your processor architecture."
+    exit 1
+fi
+
+wget "https://www.smartversion.com/smartvs38_linux_$CPU_ARCHITECTURE.zip" -O "smartvs38_linux_$CPU_ARCHITECTURE.zip"
+
+if [[ $? != 0 ]]; then
+    echo "error: Could not download SmartVersion package."
+    exit 1
+fi
+
+unzip -o "smartvs38_linux_$CPU_ARCHITECTURE.zip"
+
+if [[ $? != 0 ]]; then
+    echo "error: Could not unzip SmartVersion package."
+    exit 1
+fi
+
+sudo cp "smv" "/usr/bin"
+
+if [[ $? != 0 ]]; then
+    echo "error: Could not copy SmartVersion executable to /usr/bin/smv."
+    exit 1
+fi
+
+echo "success: Successfully installed SmartVersion executable to /usr/bin/smv."
+exit 0

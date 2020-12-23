@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [[ ! -f "/usr/bin/smv" ]]; then
+    echo "error: Could not find SmartVersion executable in /usr/bin."
+    exit 1
+fi
+
+success=0
+error=0
+
+for f in ./*.svf; do
+    "/usr/bin/env" "smv" x "$f" -br .
+    if [[ $? == 0 ]]; then
+        let "success+=1"
+    else
+        let "error+=1"
+    fi
+done
+
+# doesn't work yet
+if [[ $error == 0 ]]; then
+    echo "success: Successfully extracted $success SmartVersion patches."
+    exit 0
+else
+    echo "error: Successfully extracted $success SmartVersion patches and encountered $error errors."
+    exit 1
+fi
