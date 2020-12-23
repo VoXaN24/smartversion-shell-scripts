@@ -37,7 +37,7 @@ cd smartversion-shell-scripts
 sudo ./install-smartversion
 ```
 
-The installation does not mean that the scripts can be called from every folder, because only the SmartVersion executable is installed. You have to copy whatever script you need into the current folder.
+The installation does not mean that the scripts can be called from every folder, because only the SmartVersion executable is installed. You have to copy whatever script you need into the current folder to use it.
 
 Verify the installation by typing `smv` in the console. If the output is similar to `smv: command not found`, check the console for errors.
 
