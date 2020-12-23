@@ -19,9 +19,9 @@ if [[ ! -f "$1" ]]; then
 fi
 
 # -nbhashbits 24 -compressratio 192: based on https://forums.mydigitallife.net/threads/smartversion-tools-scripts.79415/page-14#post-1599203
-for f in *${1#*.}; do
-    if [[ $f != "$1" ]]; then
-        "/usr/bin/env" "smv" BuildPatch "${1%.*}_to_${f%.*}.svf" $1 $f -nbhashbits 24 -compressratio 192 -sha1 -sha256
+for f in *${1##*.}; do
+    if [[ "$f" != "$1" ]]; then
+        "/usr/bin/env" "smv" BuildPatch "${1%.*}_to_${f%.*}.svf" $1 "$f" -nbhashbits 24 -compressratio 192 -sha1 -sha256
         if [[ $? == 0 ]]; then
             let "success+=1"
         else
