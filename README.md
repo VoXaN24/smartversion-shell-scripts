@@ -8,7 +8,7 @@ Collection of various shell scripts for [SmartVersion](http://smartversion.com).
 #### Debian-based distributions
 ```
 sudo apt install git unzip
-git clone https://github.com/luzeagithub/smartversion-scripts.git
+git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
 cd smartversion-scripts
 sudo ./install-smartversion
 ```
@@ -16,7 +16,7 @@ sudo ./install-smartversion
 #### RHEL-based distributions
 ```
 sudo yum install git unzip
-git clone https://github.com/luzeagithub/smartversion-scripts.git
+git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
 cd smartversion-scripts
 sudo ./install-smartversion
 ```
@@ -24,7 +24,7 @@ sudo ./install-smartversion
 #### Arch-based distributions
 ```
 sudo pacman -S git unzip
-git clone https://github.com/luzeagithub/smartversion-scripts.git
+git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
 cd smartversion-scripts
 sudo ./install-smartversion
 ```
@@ -32,7 +32,7 @@ sudo ./install-smartversion
 #### SUSE-based distributions
 ```
 sudo zypper install git unzip
-git clone https://github.com/luzeagithub/smartversion-scripts.git
+git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
 cd smartversion-scripts
 sudo ./install-smartversion
 ```
