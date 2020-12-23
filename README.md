@@ -9,7 +9,7 @@ Collection of various shell scripts for [SmartVersion](http://smartversion.com).
 ```
 sudo apt install git unzip
 git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
-cd smartversion-scripts
+cd smartversion-shell-scripts
 sudo ./install-smartversion
 ```
 
@@ -17,7 +17,7 @@ sudo ./install-smartversion
 ```
 sudo yum install git unzip
 git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
-cd smartversion-scripts
+cd smartversion-shell-scripts
 sudo ./install-smartversion
 ```
 
@@ -25,7 +25,7 @@ sudo ./install-smartversion
 ```
 sudo pacman -S git unzip
 git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
-cd smartversion-scripts
+cd smartversion-shell-scripts
 sudo ./install-smartversion
 ```
 
@@ -33,7 +33,7 @@ sudo ./install-smartversion
 ```
 sudo zypper install git unzip
 git clone https://github.com/luzeagithub/smartversion-shell-scripts.git
-cd smartversion-scripts
+cd smartversion-shell-scripts
 sudo ./install-smartversion
 ```
 
