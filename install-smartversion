@@ -8,7 +8,7 @@ fi
 LSCPU_OUTPUT=$(lscpu)
 if [[ $LSCPU_OUTPUT =~ "x86_64" ]]; then
     CPU_ARCHITECTURE="x64"
-elif [[ $LSCPU_OUTPUT =~ "i386" ]]; then
+elif [[ $LSCPU_OUTPUT =~ "i386" || $LSCPU_OUTPUT =~ "i486" || $LSCPU_OUTPUT =~ "i586" || $LSCPU_OUTPUT =~ "i686" ]]; then
     CPU_ARCHITECTURE="x86"
 else
     echo "error: SmartVersion is not compatible with your processor architecture."
@@ -29,7 +29,7 @@ if [[ $? != 0 ]]; then
     exit 1
 fi
 
-sudo cp "smv" "/usr/bin"
+cp "smv" "/usr/bin"
 
 if [[ $? != 0 ]]; then
     echo "error: Could not copy SmartVersion executable to /usr/bin/smv."
