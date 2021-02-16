@@ -5,8 +5,8 @@ if [[ $1 == "" ]]; then
     exit 1
 fi
 
-if [[ ! -f "/usr/bin/smv" ]]; then
-    echo "error: Could not find SmartVersion executable in /usr/bin."
+if [[ ! -f "/usr/local/bin/smv" ]]; then
+    echo "error: Could not find SmartVersion executable in /usr/local/bin."
     exit 1
 fi
 
@@ -15,9 +15,7 @@ if [[ ! -f "$1" ]]; then
     exit 1
 fi
 
-"/usr/bin/env" "smv" x $1 -br .
-
-if [[ $? != 0 ]]; then
+if ! "/usr/bin/env" "smv" x $1 -br .; then
     echo "error: Could not extract SmartVersion patch."
     exit 1
 fi

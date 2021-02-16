@@ -84,7 +84,7 @@ success: Successfully extracted 1 SmartVersion patches.
 ```
 
 ### install-smartversion
-This script installs the SmartVersion executable to `/usr/bin/smv`.
+This script installs the SmartVersion executable to `/usr/local/bin/smv`.
 ```
 usage: sudo ./install-smartversion
 
@@ -103,7 +103,7 @@ smartvs38_linux_x64 100%[===================>] 872,16K  1,36MB/s    in 0,6s
 
 Archive:  smartvs38_linux_x64.zip
   inflating: smv                     
-success: Successfully installed SmartVersion executable to /usr/bin/smv.
+success: Successfully installed SmartVersion executable to /usr/local/bin/smv.
 ```
 
 ### patch
@@ -131,13 +131,13 @@ success: Successfully patched 1 files.
 ```
 
 ### uninstall-smartversion
-This script uninstalls the SmartVersion executable from `/usr/bin/smv`.
+This script uninstalls the SmartVersion executable from `/usr/local/bin/smv`.
 ```
 usage: sudo ./uninstall-smartversion
 
 example:
 $ sudo ./uninstall-smartversion
-success: Successfully uninstalled SmartVersion executable from /usr/bin/smv.
+success: Successfully uninstalled SmartVersion executable from /usr/local/bin/smv.
 ```
 
 ## Contributing

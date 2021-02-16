@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if [[ ! -f "/usr/bin/smv" ]]; then
-    echo "error: Could not find SmartVersion executable in /usr/bin."
+if [[ ! -f "/usr/local/bin/smv" ]]; then
+    echo "error: Could not find SmartVersion executable in /usr/local/bin."
     exit 1
 fi
 
@@ -26,9 +26,7 @@ if [[ ! -f "$2" ]]; then
 fi
 
 # -nbhashbits 24 -compressratio 192: https://forums.mydigitallife.net/threads/smartversion-tools-scripts.79415/page-14#post-1599203
-"/usr/bin/env" "smv" BuildPatch "${1%.*}_to_${2%.*}.svf" $1 $2 -nbhashbits 24 -compressratio 192 -sha1 -sha256
-
-if [[ $? != 0 ]]; then
+if ! "/usr/bin/env" "smv" BuildPatch "${1%.*}_to_${2%.*}.svf" $1 $2 -nbhashbits 24 -compressratio 192 -sha1 -sha256; then
     echo "error: Could not patch files."
     exit 1
 fi

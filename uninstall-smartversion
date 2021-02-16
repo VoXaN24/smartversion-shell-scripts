@@ -5,17 +5,15 @@ if [[ $EUID != 0 ]]; then
     exit 1
 fi
 
-if [[ ! -f "/usr/bin/smv" ]]; then
-    echo "error: Could not find SmartVersion executable in /usr/bin."
+if [[ ! -f "/usr/local/bin/smv" ]]; then
+    echo "error: Could not find SmartVersion executable in /usr/local/bin."
     exit 1
 fi
 
-rm "/usr/bin/smv"
-
-if [[ $? != 0 ]]; then
-    echo "error: Could not remove SmartVersion executable from /usr/bin/smv."
+if ! rm "/usr/local/bin/smv"; then
+    echo "error: Could not remove SmartVersion executable from /usr/local/bin/smv."
     exit 1
 fi
 
-echo "success: Successfully uninstalled SmartVersion executable from /usr/bin/smv."
+echo "success: Successfully uninstalled SmartVersion executable from /usr/local/bin/smv."
 exit 0

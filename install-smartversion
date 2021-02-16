@@ -15,26 +15,20 @@ else
     exit 1
 fi
 
-wget "https://www.smartversion.com/smartvs38_linux_$CPU_ARCHITECTURE.zip" -O "smartvs38_linux_$CPU_ARCHITECTURE.zip"
-
-if [[ $? != 0 ]]; then
+if ! wget "https://www.smartversion.com/smartvs38_linux_$CPU_ARCHITECTURE.zip" -O "smartvs38_linux_$CPU_ARCHITECTURE.zip"; then
     echo "error: Could not download SmartVersion package."
     exit 1
 fi
 
-unzip -o "smartvs38_linux_$CPU_ARCHITECTURE.zip"
-
-if [[ $? != 0 ]]; then
+if ! unzip -o "smartvs38_linux_$CPU_ARCHITECTURE.zip"; then
     echo "error: Could not unzip SmartVersion package."
     exit 1
 fi
 
-cp "smv" "/usr/bin"
-
-if [[ $? != 0 ]]; then
-    echo "error: Could not copy SmartVersion executable to /usr/bin/smv."
+if ! cp "smv" "/usr/local/bin"; then
+    echo "error: Could not copy SmartVersion executable to /usr/local/bin/smv."
     exit 1
 fi
 
-echo "success: Successfully installed SmartVersion executable to /usr/bin/smv."
+echo "success: Successfully installed SmartVersion executable to /usr/local/bin/smv."
 exit 0
