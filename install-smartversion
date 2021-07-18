@@ -15,12 +15,12 @@ else
     exit 1
 fi
 
-if ! wget "https://www.smartversion.com/smartvs38_linux_$CPU_ARCHITECTURE.zip" -O "smartvs38_linux_$CPU_ARCHITECTURE.zip"; then
+if ! wget "https://www.smartversion.com/smartvs382_linux_$CPU_ARCHITECTURE.zip" -O "smartvs382_linux_$CPU_ARCHITECTURE.zip"; then
     echo "error: Could not download SmartVersion package."
     exit 1
 fi
 
-if ! unzip -o "smartvs38_linux_$CPU_ARCHITECTURE.zip"; then
+if ! unzip -o "smartvs382_linux_$CPU_ARCHITECTURE.zip"; then
     echo "error: Could not unzip SmartVersion package."
     exit 1
 fi
