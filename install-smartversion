@@ -8,6 +8,8 @@ fi
 LSCPU_OUTPUT=$(lscpu)
 if [[ $LSCPU_OUTPUT =~ "x86_64" ]]; then
     CPU_ARCHITECTURE="x64"
+elif [[ $LSCPU_OUTPUT =~"aarch64" ]]; then
+    CPU_ARCHITECTURE="arm64"
 elif [[ $LSCPU_OUTPUT =~ "i386" || $LSCPU_OUTPUT =~ "i486" || $LSCPU_OUTPUT =~ "i586" || $LSCPU_OUTPUT =~ "i686" ]]; then
     CPU_ARCHITECTURE="x86"
 else
@@ -15,12 +17,12 @@ else
     exit 1
 fi
 
-if ! wget "https://www.smartversion.com/smartvs382_linux_$CPU_ARCHITECTURE.zip" -O "smartvs382_linux_$CPU_ARCHITECTURE.zip"; then
+if ! wget "https://www.smartversion.com/smartvs400_linux_$CPU_ARCHITECTURE.zip" -O "smartvs400_linux_$CPU_ARCHITECTURE.zip"; then
     echo "error: Could not download SmartVersion package."
     exit 1
 fi
 
-if ! unzip -o "smartvs382_linux_$CPU_ARCHITECTURE.zip"; then
+if ! unzip -o "smartvs400_linux_$CPU_ARCHITECTURE.zip"; then
     echo "error: Could not unzip SmartVersion package."
     exit 1
 fi
